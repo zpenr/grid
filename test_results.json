@@ -1,0 +1,69 @@
+{
+  "test_sessions": [
+    {
+      "test_date": "2025-11-17 15:00:45",
+      "total_questions": 5,
+      "correct_answers": 2,
+      "percentage": 40.0,
+      "questions": [
+        {
+          "question_number": 1,
+          "question": "Столица Франции?",
+          "user_answers": [
+            "Лондон"
+          ],
+          "correct_answers": [
+            "Париж"
+          ],
+          "is_correct": false
+        },
+        {
+          "question_number": 2,
+          "question": "Какие языки программирования являются компилируемыми?",
+          "user_answers": [
+            "Java"
+          ],
+          "correct_answers": [
+            "C++",
+            "Java"
+          ],
+          "is_correct": false
+        },
+        {
+          "question_number": 3,
+          "question": "Самый большой океан на Земле?",
+          "user_answers": [
+            "Тихий"
+          ],
+          "correct_answers": [
+            "Тихий"
+          ],
+          "is_correct": true
+        },
+        {
+          "question_number": 4,
+          "question": "Какие из этих животных являются млекопитающими?",
+          "user_answers": [
+            "Дельфин"
+          ],
+          "correct_answers": [
+            "Кит",
+            "Дельфин"
+          ],
+          "is_correct": false
+        },
+        {
+          "question_number": 5,
+          "question": "Формат JSON используется для:",
+          "user_answers": [
+            "Передачи структурированных данных"
+          ],
+          "correct_answers": [
+            "Передачи структурированных данных"
+          ],
+          "is_correct": true
+        }
+      ]
+    }
+  ]
+}

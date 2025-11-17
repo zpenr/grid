@@ -1,0 +1,37 @@
+.paper-btn {
+  display: inline-block;
+  margin: 58px 12px;
+}
+
+.paper-btn label {
+  display: inline-block;
+  width: 80px;
+  border-radius: 3px;
+  background-color: #f5f5f5;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  color: #616161;
+  text-transform: uppercase;
+  font-size: 14px;
+  line-height: 40px;
+  cursor: pointer;
+  text-align: center;
+  transition: box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.paper-btn input {
+  display: none;
+}
+
+.paper-btn-true input:checked ~ label {
+  background-color: #4CAF50;
+  color: white;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.paper-btn-false input:checked ~ label {
+  background-color: #f44336;
+  color: white;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}

@@ -1,0 +1,31 @@
+.flag{
+    width: 600px;   
+    height: 400px;         
+    border: 2px solid black;           
+    display: inline-block;            
+}
+.india{
+    background: linear-gradient(90deg, green 33%, white 33%, white 66%, orange 66%);
+}
+
+.no-name{
+    background: linear-gradient(42deg, red 42.5%, white 42.5%, white 44%, black 44%, black 55.5%, white 55.5%, white 57%, red 57%);
+}
+
+.no-name2{
+    background: linear-gradient(135deg, green 40%, yellow 40%, yellow 60%, red 60%);
+}
+
+.no-name3{
+    background: linear-gradient(red 25%, blue 25%, blue 50%, yellow 50%, yellow 75%, green 75%);
+}
+
+.no-name4{
+    background: linear-gradient(blue 30%, white 30%, white 35%, black 35%, black 65%, white 65%, white 70%, blue 70%);
+}
+
+.no-name5{
+    background: linear-gradient(red 50%, green 50%);
+    background-position: 180px 0;
+    background-repeat: no-repeat;
+}
