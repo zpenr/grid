@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<!-- saved from url=(0072)https://bki.matecdn.ru/-/d2a278d1-ee7e-4958-a5c7-3a960c2edb69/task2.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+</head>
+
+<body>
+  <form name="search">
+    <label>Поиск:
+      <input type="text" name="search">
+    </label>
+    <input type="submit" value="hoop!">
+  </form>
+
+  <hr>
+
+  <form name="search-person">
+    Найти пользователя:
+    <table id="age-table">
+      <tbody><tr>
+        <td>Выберите возраст:</td>
+        <td id="age-list">
+          <label>
+            <input type="radio" name="age" value="young"> меньше 18</label>
+          <label>
+            <input type="radio" name="age" value="mature">18-50</label>
+          <label>
+            <input type="radio" name="age" value="senior">больше 50</label>
+        </td>
+      </tr>
+
+      <tr>
+        <td>main:</td>
+        <td>
+          <input type="text" name="info[0]">
+          <input type="text" name="info[1]">
+          <input type="text" name="info[2]">
+        </td>
+      </tr>
+
+    </tbody></table>
+
+    <input type="submit" value="hoop2!">
+  </form>
+<script>
+  console.log(document.getElementsByTagName('table')[0].getElementsByTagName('label'))
+  elems = document.getElementsByTagName('td')
+  for (let i = 0; i<elems.length;i++){
+    if (elems[i].textContent.includes('Возраст')){
+      console.log(elems[i]);
+      break;
+    }
+  }
+  console.log(document.getElementsByTagName('form')[1])
+  console.log(document.getElementsByName('search'))
+  console.log(document.getElementsByName('search')[0].getElementsByTagName('input')[0])
+  console.log(document.getElementsByName('info[0]')[0])
+  console.log(document.getElementsByName('search-person')[0].querySelector('[name="info[0]"]'));
+</script>
+
+</body></html>

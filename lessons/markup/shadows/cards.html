@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Настраиваемые тени</title>
+<style>
+  body {
+    background-color: #f9f9d9;
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px;
+  }
+
+  /* Основа блока */
+  .box {
+    position: relative;
+    background-color: #fff;
+    width: 600px;
+    height: 100px; /* Фиксируем высоту для наглядности */
+    line-height: 100px; /* Центрируем текст по вертикали */
+    margin-bottom: 70px; /* Отступ побольше, чтобы тени не мешали */
+    text-align: center;
+    font-size: 18px;
+    /* Легкая базовая тень для объема */
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+    z-index: 1; /* Чтобы блок был выше своих теней */
+  }
+
+  /* Общие настройки для псевдоэлементов (самих теней) */
+  .box::before, .box::after {
+    content: "";
+    position: absolute;
+    background: transparent;
+    z-index: -1; /* Прячем за блок */
+    box-shadow: 0 15px 10px rgba(0, 0, 0, 0.7);
+  }
+
+  /* --- 1. ПЕРВЫЙ БЛОК: Приподнятые углы (Лифт) --- */
+  /* Тень слева и справа снизу */
+  .style-lift::before {
+    top: 50%; bottom: 12px; left: 10px; right: 50%;
+    transform: rotate(-3deg);
+    box-shadow: 0 15px 10px rgba(0, 0, 0, 0.7);
+  }
+  .style-lift::after {
+    top: 50%; bottom: 12px; left: 50%; right: 10px;
+    transform: rotate(3deg);
+    box-shadow: 0 15px 10px rgba(0, 0, 0, 0.7);
+  }
+
+
+  /* --- 2. ВТОРОЙ БЛОК: Упор на левый угол --- */
+  .style-left::after {
+    top: 80%; bottom: 15px; left: 15px; right: 15px;
+    transform: rotate(-3deg);
+    box-shadow: 0 20px 15px rgba(0, 0, 0, 0.5);
+    width: 60%; /* Тень короткая, только слева */
+  }
+  .style-left::before { display: none; }
+
+
+  /* --- 3. ТРЕТИЙ БЛОК: Диагональ (Левый низ + Правый верх) --- */
+  /* Левый нижний угол */
+  .style-diagonal::before {
+    top: 50%; bottom: 10px; left: 10px; right: 50%;
+    transform: rotate(-3deg);
+    box-shadow: 0 15px 10px rgba(0, 0, 0, 0.7);
+  }
+  /* Правый ВЕРХНИЙ угол. Тут хитрость: меняем bottom на top */
+  .style-diagonal::after {
+    top: 10px; bottom: 50%; left: 50%; right: 10px;
+    transform: rotate(-3deg); 
+    /* Тень должна падать вверх? Обычно нет, но для эффекта отгиба: */
+    box-shadow: 5px -5px 10px rgba(0, 0, 0, 0.4); 
+    z-index: -2;
+  }
+
+
+  /* --- 4. ЧЕТВЕРТЫЙ БЛОК: Бумажная тень (Изогнутый лист) --- */
+  .style-paper::after {
+    position: absolute;
+    content: "";
+    z-index: -1;
+    bottom: 16px; /* Чуть выше края блока */
+    left: 14px;
+    right: 14px;
+    height: 30%; /* Тонкая полоска тени */
+    border-radius: 100px / 10px; /* Овальная форма */
+    box-shadow: 0 18px 15px rgba(0, 0, 0, 0.4);
+    transform: none; /* Без поворота, просто дуга */
+  }
+  .style-paper::before { display: none; }
+
+</style>
+</head>
+<body>
+
+  <div class="box style-lift">Первый блок (Углы вверх)</div>
+  
+  <div class="box style-left">Второй блок (Левый угол)</div>
+  
+  <div class="box style-diagonal">Третий блок (Диагональ: низ-лево, верх-право)</div>
+  
+  <div class="box style-paper">Четвертый блок (Бумажный эффект)</div>
+
+</body>
+</html>

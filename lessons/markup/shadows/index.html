@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Box Shadows</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            background-color: #eef2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 95vh;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            padding: 40px;
+        }
+
+        .box {
+            width: 300px;
+            height: 160px;
+            background: #fff;
+            display: flex;
+            justify-content: center;
+            color: white;
+            position: relative;
+            cursor: pointer;
+        }
+        .shadow-1 {
+            background-color: #e7999a; 
+        }
+
+        .shadow-1::before, 
+        .shadow-1::after {
+            content: "";
+            position: absolute;
+            z-index: -1; /* Прячем ПОД блок */
+            bottom: 15px; 
+            left: 10px;
+            width: 50%;
+            height: 20%;
+            max-width: 300px;
+            box-shadow: 0 20px 10px rgba(80, 52, 52, 0.521);
+            transform: rotate(-5deg); /* Поворот влево */
+            transition: all 0.3s ease;
+        }
+
+        .shadow-1::after {
+            left: auto;
+            right: 10px;
+            transform: rotate(5deg); /* Поворот вправо */
+        }
+
+        .shadow-2 {
+            background-color: #f1e69d;
+        }
+
+        .shadow-2::before {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            bottom: 14px;
+            left: 8px;
+            width: 75%;
+            height: 20%;
+            box-shadow: 0 18px 12px rgba(0, 0, 0, 0.5);
+            transform: rotate(-4deg) skew(-5deg); /* Наклон и скос */
+            transition: all 0.3s ease;
+        }
+
+        .shadow-3 {
+            background-color: #9ce2a6;
+            /* Сдвиг Y=25px, Размытие=25px, Сжатие=-10px */
+            box-shadow: 0 25px 25px -10px rgba(0, 0, 0, 0.5);
+            transition: all 0.3s ease;
+        }
+
+        .shadow-4 {
+            background-color: #99e5c9;
+            /* Тени по бокам */
+            box-shadow: 12px 0 15px -4px rgba(0,0,0,0.3), -12px 0 15px -4px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="box shadow-1">
+        </div>
+
+        <div class="box shadow-2">
+        </div>
+
+        <div class="box shadow-3">
+        </div>
+
+        <div class="box shadow-4">
+        </div>
+    </div>
+
+</body>
+</html>

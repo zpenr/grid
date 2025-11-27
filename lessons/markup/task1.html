@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<!-- saved from url=(0072)https://bki.matecdn.ru/-/010ee52f-25ab-42cd-907c-5851bed6adbf/task1.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+  
+</head>
+
+<body>
+	<div>Hello:</div> 
+	<ul class="my-list"> 
+	  <li id="first">First</li> 
+	  <li>Second</li> 
+	</ul> 
+<script>
+	console.log(document.getElementsByTagName('li')[1]);
+	let table = document.createElement('table')
+	for (let i = 0; i<3; i++){
+		let tr = table.insertRow();
+		for (let a = 0; a<3;a++){
+			let td = tr.insertCell();
+			td.textContent = 'CELL';
+		}
+		table.appendChild(tr);
+	}
+	table.rows[0].cells[0].style.backgroundColor = 'red';
+	table.rows[1].cells[1].style.backgroundColor = 'red';
+	table.rows[2].cells[2].style.backgroundColor = 'red';
+	document.body.appendChild(table);
+
+</script>
+
+
+</body></html>
